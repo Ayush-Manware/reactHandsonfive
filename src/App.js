@@ -1,5 +1,6 @@
-import CompoOne from "./HOC";
+import Main from "./HOC";
 import PureCompo from "./PureCompo";
+
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
 
       <div className="hoc">
         <h1>HOC</h1>
-        <CompoOne />
+        <Main />
       </div>
     </div>
   );

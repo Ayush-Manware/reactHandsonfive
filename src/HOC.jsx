@@ -1,30 +1,39 @@
-import React from "react"
+import React, { useState } from "react";
 
-const LoggedIn = true
-
-const CompoOne = ()=>{
-    
-    if(LoggedIn){
-        return <CompoThree />
-    }else{
-        return <CompoTwo />
-    }
-    
-}
-const CompoTwo = ()=>{
+const Main = ()=>{
+    const[loggedIn,setloggedIn]=useState(false)
+    const CompoOne = () => {
+        if (loggedIn) {
+          return <CompoThree />;
+        } else {
+          return <CompoTwo />;
+        }
+        
+      };
     return(
         <>
-          <h2>Please Log In</h2>
+         <CompoOne />
+         <button onClick={()=>{setloggedIn(!loggedIn)}}>Change State</button>
         </>
     )
 }
 
-const CompoThree = ()=>{
-    return(
-        <>
-          <h2>Logged In</h2>
-        </>
-    )
-}
 
-export default CompoOne
+
+const CompoTwo = () => {
+  return (
+    <>
+      <h2>Please Log In</h2>
+    </>
+  );
+};
+
+const CompoThree = () => {
+  return (
+    <>
+      <h2>Logged In</h2>
+    </>
+  );
+};
+
+export default Main;
